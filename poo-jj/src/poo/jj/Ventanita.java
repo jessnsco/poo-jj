@@ -5,6 +5,9 @@
  */
 package poo.jj;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author T-102
@@ -97,18 +100,26 @@ public class Ventanita extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
-        // TODO add your handling code here:
-        //pedimos el valor del texto peso y altura
-        float peso=Float.parseFloat(textoPeso.getText());
-        float altura=Float.parseFloat(textoAltura.getText());
-        //Creamos nuestra entidad
-        Usuario u=new Usuario();
-        u.setPeso(peso);
-        u.setAltura(altura);
-        //Generamos el modelo Imc
-        Imc x=new Imc();
-        x.u=u;
-        etiquetaResultado.setText(x.calcular());
+        try {
+            // TODO add your handling code here:
+            //pedimos el valor del texto peso y altura
+            float peso=Float.parseFloat(textoPeso.getText());
+            float altura=Float.parseFloat(textoAltura.getText());
+            //Creamos nuestra entidad
+            Usuario u=new Usuario();
+            
+            //los validamos
+            ValidarCantidades.validarValorNegativo(altura);
+            ValidarCantidades.validarValorNegativo(peso);
+            u.setPeso(peso);
+            u.setAltura(altura);
+            //Generamos el modelo Imc
+            Imc x=new Imc();
+            x.u=u;
+            etiquetaResultado.setText(x.calcular());
+        } catch (NumeroNegativoException ex) {
+            etiquetaResultado.setText(ex.getMessage());
+        }
     }//GEN-LAST:event_calcularActionPerformed
 
     /**
