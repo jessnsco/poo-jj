@@ -46,8 +46,8 @@ public class ProbarThreads implements Runnable{
      try {
          Thread.sleep(1000);
      } catch (InterruptedException ex) {
-         Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);
-     }
-    }
+         Logger.getLogger(ProbarThreads.class.getName()).log(Level.SEVERE, null, ex);}
+
+         }
 }
 }
