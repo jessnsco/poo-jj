@@ -46,8 +46,8 @@ ArrayList<Empleado> empleados;
        
            System.out.println("Objeto guardsdo con exito!!");
    
-       }catch(Exception e){
-           System.out.println(e.getMessage());
+       }catch(Exception ex){
+           System.out.println(ex.getMessage());
        }
           //public void setU(Usuario u) {
          // this.u = u;
