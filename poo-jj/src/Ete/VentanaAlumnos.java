@@ -5,6 +5,8 @@
  */
 package Ete;
 
+import java.awt.TrayIcon;
+import java.awt.TrayIcon.MessageType;
 import javax.swing.JOptionPane;
 
 /**
